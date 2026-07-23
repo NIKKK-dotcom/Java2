@@ -23,7 +23,7 @@ public class Lesson5 {
         characteristics.put(27,3);
         characteristics.put(6,4);
         System.out.println(characteristics);
-        System.out.println(characteristics.lastKey()0);
+        System.out.println(characteristics.lastKey());
 
 
     }

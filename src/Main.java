@@ -1,5 +1,5 @@
 public class Main {
     static void main() {
-        Lesson5.section3();
+        Lesson1.dz();
     }
 }

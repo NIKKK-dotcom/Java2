@@ -61,23 +61,66 @@ class Cat extends Animal{
         System.out.println("Я кошка и я играю с клубком.");
     }
 }
-
-public class Lesson1 {
-    public static void section1(){
-        BankAccount acc1 = new BankAccount();
-        acc1.GetBalance();
-        acc1.AddMoney(10000);
-        acc1.WithDraw(6000);
+class Person1{
+    private String name;
+    private int age;
+    public Person1(String name, int age){
+        this.name = name;
+        this.age = age;
     }
-    public static void section2(){
-        Animal animal = new Animal();
-        animal.eat();
-        animal.voice();
-        Dog dog = new Dog();
-        dog.voice();
-        Cat cat = new Cat();
-        cat.play();
-        cat.voice();
+    public String getName() {
+        return name;
+    }
 
+    public int getAge() {
+        return age;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
+class Employee extends Person1 {
+    private double salary = 0;
+
+    public Employee(String name, int age, double salary) {
+        super(name, age);
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}
+
+    public class Lesson1 {
+        public static void section1() {
+            BankAccount acc1 = new BankAccount();
+            acc1.GetBalance();
+            acc1.AddMoney(10000);
+            acc1.WithDraw(6000);
+        }
+
+        public static void section2() {
+            Animal animal = new Animal();
+            animal.eat();
+            animal.voice();
+            Dog dog = new Dog();
+            dog.voice();
+            Cat cat = new Cat();
+            cat.play();
+            cat.voice();
+
+        }
+
+        public static void dz() {                         //     ДЗЗЗЗЗ
+            Employee emp = new Employee("Иван", 30, 50000);
+            System.out.println("Имя: " + emp.getName());
+            System.out.println("Возраст: " + emp.getAge());
+            System.out.println("Зарплата: " + emp.getSalary());
+        }
+    }
+
