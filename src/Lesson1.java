@@ -116,7 +116,7 @@ class Employee extends Person1 {
 
         }
 
-        public static void dz() {                         //     ДЗЗЗЗЗ
+        public static void dz() {                         //     ДЗЗЗЗЗз
             Employee emp = new Employee("Иван", 30, 50000);
             System.out.println("Имя: " + emp.getName());
             System.out.println("Возраст: " + emp.getAge());
