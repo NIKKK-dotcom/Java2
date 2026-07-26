@@ -78,6 +78,31 @@ class XZ implements ICars {
     }
 }
 
+
+interface Transport{
+    void Move();
+}
+
+class Car implements Transport{
+    @Override
+    public void Move(){
+        System.out.println("Я машина и я еду");
+    }
+}
+
+class Bike implements Transport{
+    @Override
+    public void Move(){
+        System.out.println("Я велосипед и я еду");
+    }
+}
+
+class TransportManager{
+    public void startTransport(Transport transport){
+        transport.Move();
+    }
+}
+
 public class Lesson2 {
 
     public static void section1(){
@@ -93,6 +118,13 @@ public class Lesson2 {
         XZ car = new XZ();
         car.AddFuel();
         car.ChangeWheels();
+    }
+    public static void DZ(){
+        Car car = new Car();
+        Bike bike = new Bike();
+        TransportManager manager = new TransportManager();
+        manager.startTransport(car);
+        manager.startTransport(bike);
     }
 }
 
