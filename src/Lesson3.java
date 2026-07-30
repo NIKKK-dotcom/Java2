@@ -1,3 +1,6 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 class CustomException extends Exception{
     public CustomException(String message) {
         super(message);
@@ -9,7 +12,11 @@ class NeznanyeException extends Exception{
     }
 
 }
-
+class NegativeNumberException extends Exception{
+    public NegativeNumberException(String message){
+        super(message);
+    }
+}
 
 public class Lesson3 {
     static void section1(){
@@ -41,5 +48,32 @@ public class Lesson3 {
         }finally {
             System.out.println("знай.");
         }
+    }
+    static void DZ(){
+        Scanner scanner = new Scanner(System.in);
+
+        while (true){
+            try{
+                System.out.print("Введите число: ");
+                int number = scanner.nextInt();
+
+                if (number < 0){
+                    throw new NegativeNumberException("Число не должно быть отрицательным");
+                }
+
+                System.out.println(100 / number);
+                break;
+
+            } catch (ArithmeticException e){
+                System.out.println("Делить на ноль нельзя");
+            } catch (InputMismatchException e){
+                System.out.println("Введите число");
+                scanner.nextLine();
+            } catch (NegativeNumberException e){
+                System.out.println(e.getMessage());
+            }
+        }
+
+        scanner.close();
     }
 }
